@@ -28,7 +28,7 @@ class Student {
         if (average>=70) {
             return "C"
         }
-        if (average>=6090) {
+        if (average>=60) {
             return "D"
         }
 
