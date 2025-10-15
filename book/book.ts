@@ -23,5 +23,28 @@ class Book {
     }
 }
 
-const book1 = new Book("The Alchemist", "Paulo Coelho", false);
-book1.getBookInfo();
+const book1 = new Book("The Alchemist", "Paulo Coelho");
+const book2 = new Book("Sherlock Holmes", "Author2");
+
+class Library {
+    books: Book[] = [];
+
+    constructor (books: Book[] = [])
+    {
+        this.books=books;
+    }
+
+    addBook(book: Book) {
+        this.books.push(book)
+    }
+
+    listBooks() {
+        return this.books
+    }
+
+}
+
+const lib = new Library()
+lib.addBook(book1)
+lib.addBook(book2)
+console.log(lib.listBooks())
