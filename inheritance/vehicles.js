@@ -25,9 +25,8 @@ var Vehicle = /** @class */ (function () {
 var Car = /** @class */ (function (_super) {
     __extends(Car, _super);
     function Car(brand, numDoors) {
-        var _this = this;
-        _this = _super.call(this, brand) || this,
-            _this.numDoors = numDoors;
+        var _this = _super.call(this, brand) || this;
+        _this.numDoors = numDoors;
         return _this;
     }
     Car.prototype.displayInfo = function () {
@@ -38,9 +37,8 @@ var Car = /** @class */ (function (_super) {
 var Bike = /** @class */ (function (_super) {
     __extends(Bike, _super);
     function Bike(brand, type) {
-        var _this = this;
-        _this = _super.call(this, brand) || this,
-            _this.type = type;
+        var _this = _super.call(this, brand) || this;
+        _this.type = type;
         return _this;
     }
     Bike.prototype.displayInfo = function () {

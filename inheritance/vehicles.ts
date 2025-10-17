@@ -14,7 +14,7 @@ class Vehicle {
 class Car extends Vehicle {
     numDoors: number;
     constructor (brand:string,numDoors: number) {
-        super(brand),
+        super(brand);
         this.numDoors=numDoors;
     }
 
@@ -26,7 +26,7 @@ class Car extends Vehicle {
 class Bike extends Vehicle {
     type: string;
     constructor (brand:string,type: string) {
-        super(brand),
+        super(brand);
         this.type=type;
     }
 
