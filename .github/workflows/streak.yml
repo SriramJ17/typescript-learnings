@@ -1,0 +1,31 @@
+name: Track Daily Streak (IST)
+
+on:
+  schedule:
+    - cron: '0 0 * * *'   # Runs at 5:30 AM IST
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  streak:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set timezone
+        run: |
+          export TZ="Asia/Kolkata"
+          echo "Current IST time: $(date)"
+
+      - name: Get commit dates
+        id: check
+        run: |
+          export TZ="Asia/Kolkata"
+          TODAY=$(date +%Y-%m-%d)
+          LAST_COMMIT=$(git log -1 --format=%cd --date=format:'%Y-%m-%d')
+
+          echo "today=$TODAY" >> $GITHUB_OUTPUT
+          echo "last_commit=$LAST_COMMIT" >> $GITHUB_OUTPUT
